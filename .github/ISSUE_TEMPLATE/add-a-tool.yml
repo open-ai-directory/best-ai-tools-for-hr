@@ -1,0 +1,61 @@
+name: Add a tool
+description: Suggest an AI tool to add to the directory
+title: "Add: "
+labels: ["new-tool"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Tool name
+      placeholder: "Rippling"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Official URL
+      placeholder: "https://www.rippling.com"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which existing category does this belong in? If none fit, open a "Suggest a category" issue instead.
+      options:
+        - AI Tools for Recruiting & Resume Screening
+        - AI Tools for Video Interviewing & Interview Scheduling
+        - AI Tools for Employee Onboarding
+        - AI Tools for Performance Management & Continuous Feedback
+        - AI Tools for Employee Engagement & Pulse Surveys
+        - AI Tools for HR Helpdesk & Employee Self-Service
+        - AI Tools for Payroll & Benefits Administration
+        - AI Tools for People Analytics & Workforce Planning
+        - Other / not sure
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: One-line description
+      description: Factual, ≤160 characters, no superlatives.
+      placeholder: "Unified HR, IT, and payroll platform that automates device provisioning, software access, and onboarding in one workflow."
+    validations:
+      required: true
+  - type: dropdown
+    id: pricing
+    attributes:
+      label: Pricing tier
+      options:
+        - Free
+        - Freemium
+        - Paid
+        - Paid (enterprise/custom pricing)
+    validations:
+      required: true
+  - type: checkboxes
+    id: disclosure
+    attributes:
+      label: Disclosure
+      options:
+        - label: I'm not affiliated with this tool, or I've said so above/below

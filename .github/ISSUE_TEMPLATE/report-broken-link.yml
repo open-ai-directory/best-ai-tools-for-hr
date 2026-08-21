@@ -1,0 +1,19 @@
+name: Report a broken link
+description: Flag a dead link or a tool that's no longer live
+title: "Broken link: "
+labels: ["broken-link"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Which entry?
+      placeholder: "Vic.ai, under AI Tools for Invoice Processing & Accounts Payable"
+    validations:
+      required: true
+  - type: textarea
+    id: whathappens
+    attributes:
+      label: What happens when you visit the link?
+      placeholder: "404 / redirects to unrelated site / domain parked / company acquired and renamed to X"
+    validations:
+      required: true

@@ -1,0 +1,24 @@
+name: Suggest a category
+description: Propose a new workflow-based category for the directory
+title: "Category: "
+labels: ["new-category"]
+body:
+  - type: input
+    id: category
+    attributes:
+      label: Proposed category name
+      placeholder: "AI Tools for Compensation Benchmarking"
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why does this need its own category?
+      description: What real HR workflow does this cover, and why doesn't it fit an existing category?
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example tools that would go in it
+      description: List 2-3 real tools that would populate this category, if you know of any.

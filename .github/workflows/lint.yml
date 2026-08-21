@@ -1,0 +1,29 @@
+name: Lint
+
+on:
+  pull_request:
+    paths:
+      - "README.md"
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DavidAnson/markdownlint-cli2-action@v18
+        with:
+          globs: "README.md"
+
+  format-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check alphabetical order, pricing tags, description length
+        run: python3 .github/scripts/check_format.py
